@@ -1,0 +1,21 @@
+{
+  "name": "read-lines-async-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --delay",
+    "example": "node example/example.js"
+  },
+  "keywords": [],
+  "author": "Sebastian Banaszkiewicz",
+  "license": "ISC",
+  "dependencies": {
+    "split2": "^3.1.1"
+  },
+  "devDependencies": {
+    "chance": "^1.1.4",
+    "mocha": "^7.1.1",
+    "rimraf": "^3.0.2"
+  }
+}
