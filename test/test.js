@@ -4,15 +4,12 @@ const assert = require('assert').strict;
 const PARAGRAPHS = 10000
 const rimraf = require('rimraf')
 
-
-let fileInfo
-const yieldedParagraphs = []
-
 test()
-  .then(ret => run())
+  .then(run)
 
 async function test() {
-  fileInfo = await createRandomFile(PARAGRAPHS)
+  const yieldedParagraphs = []
+  const fileInfo = await createRandomFile(PARAGRAPHS)
   console.log(`Created a new test file in ${fileInfo.path}.`)
   console.log(`Paragraphs: ${fileInfo.paragraphs.length}. Characters: ${fileInfo.characters}.`)
   for await (const line of getLines(fileInfo.path)) {

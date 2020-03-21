@@ -4,7 +4,7 @@ Just testing some stream async iterators.
 - `path` \<String> path to file
 - returns an async generator
 
-A simple async iterator that allows to loop through each line of a file at a time.
+A simple async iterator that allows to loop through each line of a file at a time. Using features added in Node 12 and 13.
 
 Example usage:
 

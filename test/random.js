@@ -4,10 +4,9 @@ const { join } = require('path')
 const os = require('os')
 const { pipeline, Readable } = require('stream')
 const pump = promisify(pipeline)
-const rimraf = promisify(require('rimraf'))
 const chance = new require('chance')()
 
-module.exports = async function (paragraphNumber = 100, remove) {
+module.exports = async function (paragraphNumber = 100) {
   const folder = await fs.mkdtemp(join(os.tmpdir(), 'generator-test-'))
   const path = join(folder, 'random-text')
   const paragraphs = []
@@ -30,9 +29,6 @@ module.exports = async function (paragraphNumber = 100, remove) {
     passthrough,
     createWriteStream(path)
   )
-
-  if (remove)
-    await rimraf(folder)
 
   return {
     paragraphs,
