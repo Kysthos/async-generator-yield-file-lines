@@ -11,8 +11,5 @@ module.exports = async function* (pathToFile) {
             if (err) throw err
         }
     )
-
-    for await (const line of lines) {
-        yield line
-    }
+    yield* lines
 }
